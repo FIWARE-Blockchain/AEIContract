@@ -1,0 +1,29 @@
+{
+  "name": "aeicontract",
+  "version": "0.0.1",
+  "description": "AEI Contract",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FIWARE-Blockchain/AEIContract.git"
+  },
+  "keywords": [
+    "npm",
+    "node",
+    "javascript",
+    "iota",
+    "fiware",
+    "contract",
+    "AEI Contract",
+    "merkle tree",
+    "ipfs"
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "^2.5.1"
+  },
+  "author": "Har Preet Singh <harpreet.singh@fiware.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FIWARE-Blockchain/AEIContract/issues"
+  },
+  "homepage": "https://github.com/FIWARE-Blockchain/AEIContract#readme"
+}
