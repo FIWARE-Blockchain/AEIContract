@@ -23,7 +23,7 @@
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
-
+const PrivateKeyProvider = require("truffle-privatekey-provider");
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -48,12 +48,11 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
 
-    qourum: {
-      host: '46.17.108.87',
-      port: 8545, 
-      network_id: "*",
+    besu: {
       gasPrice: 0,
-      gas: 4500000
+      gas: 4500000,
+      network_id: "*",
+      provider: () => new PrivateKeyProvider(process.env.PRIVATE_KEY, process.env.RPC_ENDPOINT),
     },
 
     // Another network with more advanced options...
