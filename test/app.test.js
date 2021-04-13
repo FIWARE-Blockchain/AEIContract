@@ -1,11 +1,19 @@
-process.env.NODE_ENV = 'test';
-import { assert } from 'chai';
+const Assets = artifacts.require("../contract/Assets");
 
-describe('Basic Mocha String Test', () => {
-    it('should return number of charachters in a string', () => {
-      assert.equal('Hello'.length, 5);
-    });
-    it('should return first charachter of the string', () => {
-      assert.equal('Hello'.charAt(0), 'H');
-    });
-  });
+contract("Asset", accounts => {
+  it("Create an asset", () =>
+    Assets.deployed()
+      .then(instance => {
+        instance.name.call().then((res) => {
+          console.log('name is' + res);
+        })
+
+        instance.owner.call().then((res) => {
+          console.log('owner is' + res);
+        })
+
+        instance.symbol.call().then((res) => {
+          console.log('owner is' + res);
+        })
+    }));
+});

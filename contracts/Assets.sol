@@ -17,19 +17,23 @@ contract Assets is ERC721Full, Ownable{
     }
 
     struct Relationship {
-        string _hash;
+        bytes32 _reluuid;
     }
 
     struct Metadata {
         string _metainfo;
     }
 
+    function kill() public onlyOwner {
+        selfdestruct(msg.sender);
+    }
+    
     mapping (bytes32 => Asset) private payloadHash;
     
     event AssetCreated(address owner, bytes32 uuid, uint timestamp, string filehash);
     event AssetUpdated(address owner, bytes32 uuid, uint timestamp, string filehash);
     event AssetRemoved(address owner, bytes32 uuid, uint timestamp);
-    event RelationAdded(address owner, bytes32 uuid, uint timestamp, string metadatahash);
+    event RelationAdded(address owner, bytes32 uuid, uint timestamp, bytes32 _reluuid);
     event RelationRemoved(address owner, bytes32 uuid, uint timestamp, uint index);
     event MetadataAdded(address owner, bytes32 uuid, uint timestamp, string metadatahash);
     event MetadataRemoved(address owner, bytes32 uuid, uint timestamp, uint index);
@@ -79,19 +83,19 @@ contract Assets is ERC721Full, Ownable{
         return ECDSA.recover(_messageHash, _signature) == payloadHash[uuid].owner;
     }
     
-    function addRelation(bytes32 uuid, string memory _metadatahash) public {
+    function addRelation(bytes32 uuid, bytes32 reluuid) public {
         //check either uuid exist or not
-        Relationship memory rel = Relationship(_metadatahash);
+        Relationship memory rel = Relationship(reluuid);
         payloadHash[uuid].relation.push(rel);
-        emit RelationAdded(msg.sender, uuid, block.timestamp, _metadatahash);
+        emit RelationAdded(msg.sender, uuid, block.timestamp, reluuid);
     }
     
-    function getRelations(bytes32 uuid) public view returns (string[] memory) {
-        string[] memory metadataHash = new string[](payloadHash[uuid].relation.length);
+    function getRelations(bytes32 uuid) public view returns (bytes32[] memory) {
+        bytes32[] memory metadataHash = new bytes32[](payloadHash[uuid].relation.length);
         
         for(uint i=0; i<payloadHash[uuid].relation.length; i++) {
             Relationship storage relation = payloadHash[uuid].relation[i];
-            metadataHash[i] = relation._hash;
+            metadataHash[i] = relation._reluuid;
         }
         return (metadataHash);
     }
@@ -105,7 +109,7 @@ contract Assets is ERC721Full, Ownable{
     }
 
     function isValidRelation(bytes32 uuid, uint index, bytes32[] memory _proof, bytes32 _leaf) public view returns (bool) {
-        return MerkleProof.verify(_proof, stringToBytes32(payloadHash[uuid].relation[index]._hash), _leaf);
+        return MerkleProof.verify(_proof, payloadHash[uuid].relation[index]._reluuid, _leaf);
     }
 
     function addMetadata(bytes32 uuid, string memory _metadatahash) public {
