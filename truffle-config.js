@@ -24,6 +24,9 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 const PrivateKeyProvider = require("truffle-privatekey-provider");
+console.log('network endpoint : ' + process.env.RPC_ENDPOINT);
+console.log('network port : ' + process.env.RPC_PORT);
+console.log('network id : ' + process.env.NETWORK_ID);
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
