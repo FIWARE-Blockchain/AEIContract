@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/cryptography/ECDSA.sol";
 
 contract Assets is ERC721Full, Ownable{
-    constructor() ERC721Full('NGSIASSET', 'NGA') public {}
+    constructor() ERC721Full("NGSIASSET", "NGA") public {}
   
      struct Asset {
         address owner;

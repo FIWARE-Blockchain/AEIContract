@@ -2,6 +2,14 @@
   "name": "aeicontract",
   "version": "0.0.2",
   "description": "AEI Contract",
+  "scripts": {
+    "test": "./node_modules/.bin/truffle test",
+    "coverage": "./coverage-verify.sh 100",
+    "compile": "./node_modules/.bin/truffle compile",
+    "local": "./node_modules/.bin/truffle migrate --network test",
+    "lint": "./node_modules/.bin/solium -d contracts/",
+    "security": "myth --truffle"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FIWARE-Blockchain/AEIContract.git"
@@ -19,6 +27,7 @@
   ],
   "dependencies": {
     "@openzeppelin/contracts": "^2.5.1",
+    "truffle": "^5.3.11",
     "truffle-privatekey-provider": "^1.5.0"
   },
   "author": "Har Preet Singh <harpreet.singh@fiware.org>",
