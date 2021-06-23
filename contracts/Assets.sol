@@ -100,18 +100,18 @@ contract Assets is ERC721Full, Ownable {
         emit AssetRemoved(msg.sender, uuid, block.timestamp);
     }
 
-    function isValidAsset(
-        bytes32 uuid,
-        bytes32[] memory _proof,
-        bytes32 _leaf
-    ) public view returns (bool) {
-        return
-            MerkleProof.verify(
-                _proof,
-                stringToBytes32(payloadHash[uuid]._hash),
-                _leaf
-            );
-    }
+    // function isValidAsset(
+    //     bytes32 uuid,
+    //     bytes32[] memory _proof,
+    //     bytes32 _leaf
+    // ) public view returns (bool) {
+    //     return
+    //         MerkleProof.verify(
+    //             _proof,
+    //             stringToBytes32(payloadHash[uuid]._hash),
+    //             _leaf
+    //         );
+    // }
 
     // /**
     //  * @notice Validate authenticity of message signed by Etherium private key.
