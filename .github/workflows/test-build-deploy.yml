@@ -17,7 +17,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: installing. building and testing
       - run: npm install -g truffle
       - run: npm install -g ganache-cli
       - run: npm install
