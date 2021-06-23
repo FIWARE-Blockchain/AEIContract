@@ -17,8 +17,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+        run: npm install
       - name: testrpc network
         uses: trufflesuite/ganache-cli
       - name: testing contract
-      - run: npm install
-      - run: npm run test
+        run: npm run test
