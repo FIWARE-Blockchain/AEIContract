@@ -1,6 +1,10 @@
 # AEI Smart Contract
-[![npm version](https://badge.fury.io/js/aeicontract.svg)](https://badge.fury.io/js/aeicontract)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CodeQL](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/codeql-analysis.yml)
+[![publish Package](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/publish-npm.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/publish-npm.yml)
+[![Solium Security](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/solium.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/solium.yml)
+[![Build and Test](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/test-build-deploy.yml)
+[![NPM Version](https://badge.fury.io/js/aeicontract.svg)](https://badge.fury.io/js/aeicontract)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 AEI Smart Contract is written in Solidity using ERC721 standard (NFT) and can be use with Ethereum Clients. It is compatible with FIWARE-Canis Major Adaptor to store the data in blockchain.
 AEI, asset, events (metadata), relationship, is designed to store the NGSI-LD model with the help of Canis Major Adaptor.
