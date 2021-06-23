@@ -55,6 +55,8 @@ _This project uses:_
 
 ## License
 
-AEI Contract is licensed under the [MIT](LICENSE) License.
+AEI Contract  is licensed under the Apache License, Version 2.0. See
+[LICENSE](https://github.com/fiware-blockchain/AEIContract/blob/master/LICENSE) for the full
+license text.
 
 © 2021 FIWARE Foundation e.V.
