@@ -15,5 +15,5 @@ contract("Asset", accounts => {
         instance.symbol.call().then((res) => {
           console.log('owner is' + res);
         })
-    }));
+      }));
 });

@@ -18,8 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install -g truffle
-      - run: npm install -g ganache-cli
+      - run: npm install -g ethereumjs-testrpc
       - run: npm install
-      - run: ganache-cli
-      - run: npm run compile
+      - run: testrpc
       - run: npm run test
