@@ -3,8 +3,6 @@
   "version": "0.0.3",
   "description": "AEI Contract",
   "scripts": {
-    "testcover": "./node_modules/.bin/npm-run-all --parallel testrpc test",
-    "testrpc": "./node_modules/.bin/testrpc",
     "test": "./node_modules/.bin/truffle test",
     "coverage": "./coverage-verify.sh 100",
     "compile": "./node_modules/.bin/truffle compile"
@@ -35,8 +33,6 @@
   },
   "homepage": "https://github.com/FIWARE-Blockchain/AEIContract#readme",
   "devDependencies": {
-    "ethereumjs-testrpc": "^6.0.3",
-    "npm-run-all": "^4.1.5",
     "truffle": "^5.3.11"
   }
 }

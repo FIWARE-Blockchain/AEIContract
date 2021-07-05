@@ -33,7 +33,6 @@ To Store the NGSI-LD model there are few possibilities with the help of some sup
 - getAsset(bytes32 uuid)
 - updateAsset(bytes32 uuid, string memory _newHash)
 - removeAsset (bytes32 uuid)
-- isValidAsset(bytes32 uuid, bytes32[] memory _proof, bytes32 _leaf)
 - isValidAssetEthMessage(bytes32 uuid, bytes32 _messageHash, bytes memory _signature)
 - addRelation(bytes32 uuid, bytes32 reluuid)
 - getRelations(bytes32 uuid)
@@ -42,7 +41,6 @@ To Store the NGSI-LD model there are few possibilities with the help of some sup
 - addMetadata(bytes32 uuid, string memory _metadatahash)
 - getMetadatas(bytes32 uuid) public view returns (string[] memory)
 - removeMetadata(bytes32 uuid, uint index)
-- isValidMetadata(bytes32 uuid, uint index, bytes32[] memory _proof, bytes32 _leaf)
 ```
 Apart from that ERC721, Ownable, MerkleProof, ECDSA methods are supported.
 

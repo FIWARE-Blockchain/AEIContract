@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+    aei-contract:
+        build:
+            context: .
+            args:
+                RPC_ENDPOINT: ganache-cli
+                RPC_PORT: 8545
+        command: bash -c "truffle migrate"
+        depends_on: 
+            - ganache-cli
+
+    ganache-cli:
+        image: trufflesuite/ganache-cli:latest
+        ports:
+            - "8545:8545"
+        volumes:
+            - ./ganache_data:/ganache_data
