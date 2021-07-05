@@ -1,18 +1,18 @@
-# name: publish npm
-# on:
-#   release:
-#     types: [published]
-# jobs:
-#   publish:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v1
-#       - uses: actions/setup-node@v1
-#         with:
-#           node-version: ${{ matrix.node-version }}
-#       - run: npm install
-#       - run: npm install -g truffle
-#       - run: npm run compile
-#       - uses: JS-DevTools/npm-publish@v1
-#         with:
-#           token: ${{ secrets.NPM_TOKEN }}
+name: publish npm
+on:
+  release:
+    types: [published]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm install
+      - run: npm install -g truffle
+      - run: npm run compile
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

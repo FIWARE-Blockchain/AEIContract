@@ -1,8 +1,7 @@
 # AEI Smart Contract
 [![CodeQL](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/codeql-analysis.yml)
-[![publish Package](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/publish-npm.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/publish-npm.yml)
 [![Solium Security](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/solium.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/solium.yml)
-[![Build and Test](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/test-build-deploy.yml)
+[![Contract Test CI](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/test-build-deploy.yml/badge.svg)](https://github.com/FIWARE-Blockchain/AEIContract/actions/workflows/test-build-deploy.yml)
 [![NPM Version](https://badge.fury.io/js/aeicontract.svg)](https://badge.fury.io/js/aeicontract)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
